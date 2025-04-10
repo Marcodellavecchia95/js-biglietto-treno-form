@@ -23,11 +23,14 @@
 const fullNameElement = document.getElementById("full-name");
 const distanceElement = document.getElementById("distance");
 const ageElement = document.getElementById("age");
-const userDataElement = document.getElementById("user-data");
+
+const formElement = document.getElementById("user-data");
 let outputNameElement = document.getElementById("output-name");
 let finalPriceOutputElement = document.getElementById("final-price");
 const priceElement = document.querySelector(".price");
-userDataElement.addEventListener("input", (event) => {
+const ticketTypeElement = document.getElementById("ticket-type");
+formElement.addEventListener("submit", (event) => {
+  event.preventDefault();
   const name = fullNameElement.value;
   const distance = parseInt(distanceElement.value);
   const age = parseInt(ageElement.value);
@@ -37,23 +40,21 @@ userDataElement.addEventListener("input", (event) => {
 
   if (age < 18) {
     outputNameElement.innerText = name;
-    finalPriceOutputElement.innerText = `Il prezzo del biglietto è: ${priceUnder18.toFixed(
-      2
-    )}`;
+    finalPriceOutputElement.innerText = ` ${priceUnder18.toFixed(2)}€`;
+    ticketTypeElement.innerText = "Sconto Under 16";
+
     // console.log(name);
     // console.log(priceUnder18.toFixed(2));
   } else if (age > 65) {
     outputNameElement.innerText = name;
-    finalPriceOutputElement.innerText = `Il prezzo del biglietto è: ${priceOver65.toFixed(
-      2
-    )}`;
+    finalPriceOutputElement.innerText = ` ${priceUnder18.toFixed(2)}€`;
+    ticketTypeElement.innerText = "Sconto Over 65";
     // console.log(name);
     // console.log(priceOver65.toFixed(2));
   } else {
     outputNameElement.innerText = name;
-    finalPriceOutputElement.innerText = `Il prezzo del biglietto è: ${finalPrice.toFixed(
-      2
-    )}`;
+    finalPriceOutputElement.innerText = ` ${priceUnder18.toFixed(2)}€`;
+    ticketTypeElement.innerText = "Biglietto Standard";
     // console.log(name);
     // console.log(finalPrice);
   }

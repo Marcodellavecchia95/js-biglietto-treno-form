@@ -23,15 +23,77 @@
     <title>JS Train Ticket</title>
   </head>
   <body>
-    <form id="user-data">
-      <input id="full-name" type="text" />
-      <input id="distance" type="number" />
-      <input id="age" type="number" />
-    </form>
+    <div class="container">
+      <h2 class="text-center text-warning">
+        CALCOLA IL PREZZO DEL TUO BIGLIETTO
+      </h2>
+      <div class="row">
+        <div class="col12">
+          <div class="card">
+            <form id="user-data">
+              <div>
+                <input id="full-name" type="text" class="form-control" />
+                <label class="fw-medium" for="full-name">Nome e Cognome</label>
+              </div>
+              <div>
+                <input id="distance" type="number" class="form-control" />
+                <label class="fw-medium" for="distance">Distanza</label>
+              </div>
+              <div>
+                <input id="age" type="number" class="form-control" />
+                <label class="fw-medium" for="age">Età</label>
+              </div>
+              <button
+                id="generate-button"
+                class="btn btn-warning mt-3 fw-bold"
+                type="submit"
+              >
+                Genera
+              </button>
+            </form>
+          </div>
+        </div>
+        <h2 class="text-center text-warning mt-2">IL TUO BIGLIETTO</h2>
+        <div class="col12">
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th scope="col">DETTAGLIO PASSEGGERI</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row" class="bg-secondary">NOME PASSEGGERO</th>
+                <td class="fw-bold">Offerta</td>
+                <td class="fw-bold">Carrozza</td>
+                <td class="fw-bold">Codice CP</td>
+                <td class="fw-bold">Costo Biglietto</td>
+              </tr>
+              <tr>
+                <th scope="row" id="output-name" class="bg-secondary"></th>
+                <td id="ticket-type"></td>
+                <td>5</td>
+                <td>92911</td>
+                <td id="final-price"></td>
+              </tr>
+              <tr>
+                <th class="bg-secondary"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 
-    <div id="output-name" class="border bg-light"></div>
-    <div id="final-price" class="border bg-light"></div>
-
-    <button id="generate-button" class="btn btn-primary">Genera</button>
+    <div id="output-name"></div>
+    <div id="final-price"></div>
   </body>
 </html>
