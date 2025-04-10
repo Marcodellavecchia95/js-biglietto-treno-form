@@ -19,3 +19,31 @@
 // }
 
 // alert(outputText);
+
+const fullNameElement = document.getElementById("full-name");
+const distanceElement = document.getElementById("distance");
+const ageElement = document.getElementById("age");
+const userDataElement = document.getElementById("user-data");
+
+const priceElement = document.querySelector(".price");
+userDataElement.addEventListener("input", (event) => {
+  const name = fullNameElement.value;
+  const distance = parseInt(distanceElement.value);
+  const age = parseInt(ageElement.value);
+  const finalPrice = distance * 0.21;
+  let priceUnder18 = finalPrice * 0.8;
+  let priceOver65 = finalPrice * 0.6;
+
+  if (age < 18) {
+    console.log(name);
+
+    console.log(priceUnder18.toFixed(2));
+  } else if (age > 65) {
+    console.log(name);
+
+    console.log(priceOver65.toFixed(2));
+  } else {
+    console.log(name);
+    console.log(finalPrice);
+  }
+});
