@@ -30,6 +30,9 @@ const priceElement = document.querySelector(".price");
 const ticketTypeElement = document.getElementById("ticket-type");
 let coachNumberElement = document.getElementById("coach-number");
 let ticketNumberElement = document.getElementById("ticket-number");
+const myTicketElement = document.getElementById("my-ticket");
+console.log(myTicketElement);
+
 formElement.addEventListener("submit", (event) => {
   event.preventDefault();
   const name = fullNameElement.value;
@@ -45,6 +48,7 @@ formElement.addEventListener("submit", (event) => {
     ticketTypeElement.innerText = "Sconto Under 16";
     coachNumberElement.innerHTML = Math.floor(Math.random() * 10) + 1;
     ticketNumberElement.innerHTML = Math.floor(Math.random() * 10000) + 1;
+    myTicketElement.classList.remove("d-none");
     // console.log(name);
     // console.log(priceUnder18.toFixed(2));
   } else if (age > 65) {
@@ -53,6 +57,7 @@ formElement.addEventListener("submit", (event) => {
     ticketTypeElement.innerText = "Sconto Over 65";
     coachNumberElement.innerHTML = Math.floor(Math.random() * 10) + 1;
     ticketNumberElement.innerHTML = Math.floor(Math.random() * 10000) + 1;
+    myTicketElement.classList.remove("d-none");
     // console.log(name);
     // console.log(priceOver65.toFixed(2));
   } else {
@@ -61,6 +66,7 @@ formElement.addEventListener("submit", (event) => {
     ticketTypeElement.innerText = "Biglietto Standard";
     coachNumberElement.innerHTML = Math.floor(Math.random() * 10) + 1;
     ticketNumberElement.innerHTML = Math.floor(Math.random() * 10000) + 1;
+    myTicketElement.classList.remove("d-none");
     // console.log(name);
     // console.log(finalPrice);
   }
