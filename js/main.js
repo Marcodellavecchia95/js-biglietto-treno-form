@@ -24,7 +24,8 @@ const fullNameElement = document.getElementById("full-name");
 const distanceElement = document.getElementById("distance");
 const ageElement = document.getElementById("age");
 const userDataElement = document.getElementById("user-data");
-
+let outputNameElement = document.getElementById("output-name");
+let finalPriceOutputElement = document.getElementById("final-price");
 const priceElement = document.querySelector(".price");
 userDataElement.addEventListener("input", (event) => {
   const name = fullNameElement.value;
@@ -35,15 +36,25 @@ userDataElement.addEventListener("input", (event) => {
   let priceOver65 = finalPrice * 0.6;
 
   if (age < 18) {
-    console.log(name);
-
-    console.log(priceUnder18.toFixed(2));
+    outputNameElement.innerText = name;
+    finalPriceOutputElement.innerText = `Il prezzo del biglietto è: ${priceUnder18.toFixed(
+      2
+    )}`;
+    // console.log(name);
+    // console.log(priceUnder18.toFixed(2));
   } else if (age > 65) {
-    console.log(name);
-
-    console.log(priceOver65.toFixed(2));
+    outputNameElement.innerText = name;
+    finalPriceOutputElement.innerText = `Il prezzo del biglietto è: ${priceOver65.toFixed(
+      2
+    )}`;
+    // console.log(name);
+    // console.log(priceOver65.toFixed(2));
   } else {
-    console.log(name);
-    console.log(finalPrice);
+    outputNameElement.innerText = name;
+    finalPriceOutputElement.innerText = `Il prezzo del biglietto è: ${finalPrice.toFixed(
+      2
+    )}`;
+    // console.log(name);
+    // console.log(finalPrice);
   }
 });
